@@ -1,5 +1,23 @@
-docker rm container-talk-mongo
-docker run -d --name container-talk-mongo mongo:latest --smallfiles
+docker rm mongo
+docker run -d --name mongo mongo:latest --smallfiles
 
-docker rm container-talk
-docker run -d -p 3000:3000 -e MONGODB=mongodb://container-talk-mongo:27017 --name container-talk --link container-talk-mongo panmanphil/container-talk 
+docker run -d --name mongo --volumes-from mongo-data mongo
+docker run -it --name mongo-data --volumes-from mongo echo 'hey campers'
+
+docker rm node-starter
+
+docker build -t node-starter .
+docker run -it -p 3000:3000 -e MONGODB=mongodb://mongo:27017 --name node-starter --link mongo node-starter
+
+
+Philips-MacBook-Pro:codecamp philipnelson$ docker run -d -p 3000:3000 -e MONGODB=mongodb://mongo:27017 --name node-starter --link mongo -v /Users/philipnelson/Projects/codecamp/node-starter/views:/views node-starter
+
+docker-machine create --driver vmwarefusion codecampfus
+
+docker-machine create --driver virtualbox codecamp
+
+docker rmi <image name>
+
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://172.16.17.129:2376"
+export DOCKER_CERT_PATH="/Users/philipnelson/.docker/machine/machines/codecampfus"
