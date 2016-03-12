@@ -1,0 +1,5 @@
+docker rm container-talk-mongo
+docker run -d --name container-talk-mongo mongo:latest --smallfiles
+
+docker rm container-talk
+docker run -d -p 3000:3000 -e MONGODB=mongodb://container-talk-mongo:27017 --name container-talk --link container-talk-mongo panmanphil/container-talk 

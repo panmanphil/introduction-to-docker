@@ -1,0 +1,60 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrant on AWS Example
+# Brian Cantoni
+
+# This sample sets up 1 VM ('delta') with only Java installed.
+
+# Adjustable settings
+CFG_TZ = "US/Pacific"     # timezone, like US/Pacific, US/Eastern, UTC, Europe/Warsaw, etc.
+
+# Provisioning script
+node_script = <<SCRIPT
+#!/bin/bash
+# set timezone
+echo "#{CFG_TZ}" > /etc/timezone    
+dpkg-reconfigure -f noninteractive tzdata
+# install a few base packages
+yum update
+yum install -y docker
+service docker start
+usermod -a -G docker ec2-user
+
+echo Provisioning is complete
+SCRIPT
+
+
+# Configure VM server
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.define :delta do |x|
+    x.vm.box = "hashicorp/precise64"
+    x.vm.hostname = "delta"
+    x.vm.provision :shell, :inline => node_script
+
+    x.vm.provider :virtualbox do |v|
+      v.name = "delta"
+    end
+
+    x.vm.provider :aws do |aws, override|
+      aws.access_key_id = ENV['AWS_ACCESS_KEY']
+      aws.secret_access_key = ENV['AWS_SECRET_KEY']
+      aws.keypair_name = ENV['AWS_KEYNAME']
+      aws.ami = "ami-e7527ed7"
+      aws.region = "us-west-2"
+      aws.instance_type = "t2.micro"
+      aws.security_groups ="sg-95de71f1"
+      aws.subnet_id = "subnet-7bd5931e"
+      aws.iam_instance_profile_arn = "arn:aws:iam::615303160200:instance-profile/ECSAdmin"
+      aws.associate_public_ip="true"
+      #aws.use_iam_profile="true"
+      aws.user_data = "#!/bin/bash\nsed -i -e 's/^Defaults.*requiretty/# Defaults requiretty/g' /etc/sudoers"
+
+      override.vm.box = "dummy"
+      override.ssh.username = "ec2-user"
+      override.ssh.private_key_path = ENV['AWS_KEYPATH']
+    end
+  end
+end
+
