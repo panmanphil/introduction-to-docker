@@ -1,0 +1,12 @@
+mongo:
+  container_name: mongo
+  image: mongo:latest
+node-starter:
+  container_name: node-starter
+  image: node-starter
+  environment:
+    MONGODB: mongodb://mongo:27017
+  ports:
+    - "3000:3000"
+  links: 
+    - mongo

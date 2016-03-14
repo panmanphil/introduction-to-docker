@@ -15,9 +15,9 @@ RUN   \
   ln -s /opt/node/bin/* . && \
   rm -f /opt/node-v4.2.6-linux-x64.tar.gz
 
-ADD . . 
+ADD . /src 
 # Set the working directory
-WORKDIR   /
+WORKDIR   /src
 RUN npm install node-sass
 RUN node ./node_modules/node-sass-middleware/node_modules/node-sass/scripts/install.js
 RUN /opt/node/bin/npm -g install express
