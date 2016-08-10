@@ -1,7 +1,8 @@
 docker rm mongo
-docker run -d --name mongo mongo:latest --smallfiles
+docker run -d --name mongo --rm mongo:latest
+docker exec -it mongo mongo
 
-use codecamp
+use thatconf
 db.collection.insert({foo: "bar"})
 db.collection.find()
 
@@ -17,12 +18,7 @@ docker run -d -p 3000:3000 -e MONGODB=mongodb://mongo:27017 --name node-starter 
 
 docker run -d -p 3000:3000 -e MONGODB=mongodb://mongo:27017 --name node-starter --link mongo -v /Users/philipnelson/Projects/codecamp/node-starter/views:/src/views node-starter
 
-docker-machine create --driver vmwarefusion codecampfus
-
-docker-machine create --driver virtualbox codecamp
-
 docker rmi <image name>
 
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://172.16.17.129:2376"
-export DOCKER_CERT_PATH="/Users/philipnelson/.docker/machine/machines/codecampfus"
+docker rm $(docker ps -a -q) #only from bash shell though
+
