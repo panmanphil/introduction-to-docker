@@ -1,0 +1,13 @@
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\hostpolicy.dll
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\hostfxr.dll
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.exe
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.deps.json
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.runtimeconfig.json
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.runtimeconfig.dev.json
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.dll
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\bin\Debug\netcoreapp2.0\win7-x64\dotnet-console.pdb
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\obj\Debug\netcoreapp2.0\win7-x64\dotnet-console.csproj.CoreCompileInputs.cache
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\obj\Debug\netcoreapp2.0\win7-x64\dotnet-console.AssemblyInfoInputs.cache
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\obj\Debug\netcoreapp2.0\win7-x64\dotnet-console.AssemblyInfo.cs
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\obj\Debug\netcoreapp2.0\win7-x64\dotnet-console.dll
+Z:\philipnelson\Projects\introduction-to-docker\dotnet-console\obj\Debug\netcoreapp2.0\win7-x64\dotnet-console.pdb
