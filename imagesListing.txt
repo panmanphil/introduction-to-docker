@@ -1,0 +1,18 @@
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+postgres                     latest              23e8b4b87843        10 days ago         343MB
+ubuntu                       latest              74f8760a2a8b        10 days ago         119MB
+alpine                       latest              11cd0b38bc3c        2 weeks ago         6.82MB
+nodestarter_web              latest              70acb22ec854        3 months ago        1.18GB
+tasty-image                  latest              960106ca074f        4 months ago        2.58GB
+tasty-app                    latest              4cb20052f5d1        4 months ago        1.11GB
+stefanscherer/node-windows   latest              8ee6fbbffb4d        4 months ago        1.16GB
+microsoft/dotnet             latest              ebf6caf00b2b        4 months ago        2.57GB
+microsoft/aspnetcore-build   2.0.6-2.1.101       46261325ae8a        4 months ago        2.9GB
+microsoft/aspnetcore         latest              920e71ab2ffe        4 months ago        1.32GB
+microsoft/aspnet             4.7                 be183ddb3922        4 months ago        12.7GB
+microsoft/aspnet             latest              44ac8d5a3039        4 months ago        13.9GB
+microsoft/nanoserver         latest              2bee0eeea2d3        4 months ago        1.11GB
+microsoft/aspnet             3.5                 b44438e0b607        5 months ago        13.4GB
+alpine                       <none>              3fd9065eaf02        6 months ago        6.55MB
+docker4w/nsenter-dockerd     latest              cae870735e91        9 months ago        263kB
+compulim/nanoserver-node     latest              6cd8cef81767        12 months ago       1.08GB

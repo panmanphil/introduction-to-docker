@@ -7,20 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace TastySite.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ChowController : Controller
     {
+        private readonly string[] _chows =  new string[] { "sammy", "yogurt", "burger", "burger", "burger", "not-bacon" };
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _chows;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            if (id < 0 || id > _chows.Length - 1) return "poop";
+            return _chows[id];
         }
 
         // POST api/values
