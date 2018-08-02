@@ -1,18 +1,26 @@
 version: '3'
+
+networks:
+  dbnet:
+    driver: nat
+
 services:
-  mongo:
-    image: stefanscherer/mongo-windows
+  db:
+    image: mongo:4.0-windowsservercore-1803
+    networks:
+      - dbnet
   web:
     build: .
     ports:
      - "8080:8080"
+    networks:
+      - dbnet
     environment:
-     - MONGODB_URI=mongodb://mongo:27017/test 
-    links:
-     - mongo 
+     - MONGODB_URIxx=mongodb://172.22.135.164:27017/test
+     - MONGODB_URI=mongodb://db:27017/test
     depends_on: 
-     - mongo 
+     - db 
     volumes:
-     - .:/starter
-     - /starter/node_modules
+     - C:\Users\panma\Documents\docker\hackathon-starter:C:\live
+    restart: unless-stopped
      
