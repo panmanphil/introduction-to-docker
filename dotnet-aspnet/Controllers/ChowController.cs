@@ -9,7 +9,7 @@ namespace TastySite.Controllers
     [Route("api/[controller]")]
     public class ChowController : Controller
     {
-        private readonly string[] _chows =  new string[] { "sammy", "yogurt", "burger", "burger", "burger", "not-bacon" };
+        private readonly string[] _chows =  new string[] { "sammy", "yogurt", "burger", "burger", "burger", "juicy juicy", "not-bacon" };
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
