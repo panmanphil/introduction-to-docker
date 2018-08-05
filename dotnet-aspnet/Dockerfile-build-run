@@ -18,5 +18,5 @@ FROM microsoft/dotnet:2.1.2-aspnetcore-runtime
 WORKDIR /app
 COPY --from=build /app/dotnetapp/out ./
 
-CMD ["dotnet", "app/tasty-site.dll"]
+CMD ["dotnet", "tasty-site.dll"]
 
