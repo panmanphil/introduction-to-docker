@@ -10,9 +10,13 @@ microsoft/nanoserver
 # volume issues for Windows containers
 
   must be blank folder or not exist
+  
   can't do what is normal with linux of replacing an existing folder until union file system is working in Windows
+  
   can't map a host network folder either, must be hard drive
+  
   cant' replace a single file with -v either like you can do with Linux
+  
   Some shells like gitbash mess with windows paths so -v c:\xxxx may get mangled and are not recognized by docker
 
 # Resources:
