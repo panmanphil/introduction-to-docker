@@ -1,4 +1,4 @@
-# Useful windows images
+# Useful Docker on Windows info
 
 # Always get these base images first
 microsoft/windowsservercore
