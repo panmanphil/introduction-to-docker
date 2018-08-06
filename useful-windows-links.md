@@ -1,7 +1,8 @@
 # Useful windows images
 
-Always get these base images first
+# Always get these base images first
 microsoft/windowsservercore
+
 microsoft/nanoserver
 
 # installing windows 2016 1803 with docker
