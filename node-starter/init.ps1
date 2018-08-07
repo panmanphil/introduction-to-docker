@@ -8,5 +8,8 @@ $ip =  $ping.SendPingAsync("db").Result.Address.IpAddressToString
 $ENV:MONGODB_URI="mongodb://$($ip):27017/test"
 Write-Host "db ip is: $ip connstr is: $($ENV:MONGODB_URI)"
 k:
-npm install
+$nodeExists = Test-Path -Path node_modules
+if ($False -eq $nodeExists) {
+    npm install
+}
 node app.js
