@@ -6,7 +6,7 @@ networks:
 
 services:
   db:
-    image: mongo:4.0-windowsservercore-1803
+    image: mongo:3.6-windowsservercore-1709
     networks:
       - dbnet
   web:
@@ -21,6 +21,6 @@ services:
     depends_on: 
      - db 
     volumes:
-     - C:\Users\panma\Documents\docker\hackathon-starter:C:\live
+     - C:\development\poc\hackathon-starter:C:\live
     restart: unless-stopped
      
